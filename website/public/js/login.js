@@ -14,6 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       console.log(user);
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
       //var id = user.
+
+      document.getElementById("login_status").innerHTML = "Sign out";
     }
 
   } else {
@@ -22,6 +24,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
 
+    document.getElementById("login_status").innerHTML = "Sign in";
   }
 });
 
