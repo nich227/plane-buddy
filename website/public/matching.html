@@ -38,7 +38,7 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -49,7 +49,7 @@
 
 	</head>
 	<body>
-	<script src="js/login.js"></script>	
+    <script src="js/login.js"></script>
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
@@ -62,7 +62,7 @@
 						</div>
 						<div class="col-md-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="index.html">Home</a></li>
 								<li><a href="#about">About</a>
 								<li id="log_in"><a href="login.html">Sign in</a>
 							</ul>
@@ -72,7 +72,7 @@
 			</div>
 		</nav>
 
-		<section id="home" class="video-hero" style="height: 700px; background-image: url(images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+		<section id="home" class="video-hero" style="height: 500px; background-image: url(images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
 		<div class="overlay"></div>
 			<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=vqqt5p0q-eU',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default'}"></a> 
 			<div class="display-t text-center">
@@ -80,9 +80,7 @@
 					<div class="container">
 						<div class="col-md-12 col-md-offset-0">
 							<div class="animate-box">
-								<h2>Get the seat you've always wanted</h2>
-								<p>with Plane Buddy</p>
-								<p><a href="login.html" class="btn btn-primary btn-lg btn-custom">Get started</a></p>
+								<h2>Passenger Matching</h2>
 							</div>
 						</div>
 					</div>
@@ -90,77 +88,48 @@
 			</div>
 		</section>
 
-		<div class="colorlib-featured">
-			<div class="row animate-box">
-				<div class="featured-wrap">
-					<div class="owl-carousel">
-						<div class="item">
-							<div class="col-md-8 col-md-offset-2">
-								<div class="featured-entry">
-									<img class="img-responsive" src="images/dashboard_full_1.jpg" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="col-md-8 col-md-offset-2">
-								<div class="featured-entry">
-									<img class="img-responsive" src="images/dashboard_full_2.jpg" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="col-md-8 col-md-offset-2">
-								<div class="featured-entry">
-									<img class="img-responsive" src="images/dashboard_full_3.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div id="colorlib-contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-md-push-4 animate-box">
+                            <form action="#">
+                                <div class="row form-group">
+                                    <div class="col-md-0">
+                                        <p>1. Will you bring an infant with you?</p>
+                                        <select type="text" id="baby" class="form-control" placeholder="Select a choice">
+                                                <option value="y">Yes</option>
+                                                <option value="n">No</option>
+                                                <option value="a">No preference</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-0">
+                                        <br>
+                                       <p>2. Do you want to socialize or would you rather keep to yourself?</p>
+                                       <select type="text" id="social" class="form-control" placeholder="Select a choice">
+                                            <option value="s">Socialize</option>
+                                            <option value="r">Read or Watch a Movie</option>
+                                            <option value="l">Sleep</option>
+                                            <option value="n">No preference</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-md-0">
+                                            <br>
+                                           <p>3. Do you have any kind of disabilities?</p>
+                                           <select type="text" id="social" class="form-control" placeholder="Select a choice">
+                                                <option value="y">Yes</option>
+                                                <option value="n">No</option>
+                                        </select>
+                                        </div>
+                                </div>
 
-	<a name="about">
-		<div class="colorlib-services colorlib-bg-white">
-			<div class="container" style="color:gray">
-				<div class="row">
-					<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="icon-briefcase"></i>
-							</span>
-							<div class="desc">
-								<h3>Choose your flight</h3>
-								<p>Choose a flight that you've booked with us to begin the process.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="icon-list"></i>
-							</span>
-							<div class="desc">
-								<h3>Answer a few questions</h3>
-								<p>Tell us a little bit about yourself, so that we can help you get paired with the perfect seat buddies!</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="icon-airplane"></i>
-							</span>
-							<div class="desc">
-								<h3>Enjoy your flight!</h3>
-								<p>That's all there is to it! Sit back, relax, and enjoy your flight with the people you want to sit with!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</a>
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                </div>
+                            </form>		
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 		<footer id="colorlib-footer">
 			<div class="container">
@@ -218,7 +187,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> The E
   };
   firebase.initializeApp(config);
 </script>
-	
+    
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

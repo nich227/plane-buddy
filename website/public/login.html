@@ -64,9 +64,9 @@
                 </div>
                 <div class="col-md-10 text-right menu-1">
                   <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a>
-                    <li><a href="login.html">Sign in</a>
+                    <li class="active" id="log_in"><a href="login.html">Sign in</a>
                   </ul>
                 </div>
               </div>
@@ -74,20 +74,32 @@
           </div>
         </nav>
 </head>
+
 <body>
-  <div id="login_div" class="main-div">
-    <h3 style="font-size: 16pt; text-align: center;">Login to Plane Buddy</h3>
-    <input type="email" placeholder="Email..." id="email_field" />
-    <input type="password" placeholder="Password..." id="password_field" />
+    <div class="display-t text-center">
+				<div class="display-tc">
+					<div class="container">
+						<div class="col-md-12 col-md-offset-0">
+							<div class="animate-box">
+								                <div id="login_div" class="main-div">
+                            <h3 style="font-size: 16pt; text-align: center; position:relative;">Login to Plane Buddy</h3>
+                            <input type="email" placeholder="Email..." id="email_field" />
+                            <input type="password" placeholder="Password..." id="password_field" />
+    
+                            <button onclick="login()">Login</button>
+                        </div>
+    
+                        <div id="user_div" class="loggedin-div">
+                            <h3>Welcome User</h3>
+                            <p id="user_para">Welcome to Plane Buddy. You're currently logged in.</p>
+                            <button onclick="continueToMatching()">Continue</button>
+                        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-    <button onclick="login()">Login</button>
-  </div>
-
-  <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to Plane Buddy. You're currently logged in.</p>
-    <button onclick="logout()">Logout</button>
-  </div>
 
 
 

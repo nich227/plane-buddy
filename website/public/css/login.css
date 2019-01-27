@@ -38,9 +38,9 @@ input, button {
 }
 
 .main-div button, .loggedin-div button {
-  background: #5d8ffc;
+  background: #e0142e;
   color: #fff;
-  border: 1px solid #5d8ffc;
+  border: 1px solid #e0142e;
   border-radius: 5px;
   padding: 15px;
   display: block;
@@ -51,8 +51,8 @@ input, button {
 }
 
 .main-div button:hover, .loggedin-div button:hover {
-  background: #fff;
-  color: #5d8ffc;
-  border: 1px solid #5d8ffc;
+  background: #c33019;
+  color: #fff;
+  border: 1px solid #c33019;
   cursor: pointer;
 }
