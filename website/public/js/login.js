@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user.uid);
-        var uid = user.uid; //variable uid, has uid to get data base related file UID
+       uid = user.uid; //variable uid, has uid to get data base related file UID
         console.log(uid);
         var database = firebase.database();
         var ref = database.ref('users');
@@ -48,7 +48,7 @@ function gotData(data){//get data from firebase
   
   
   //console.log(keys);
-  var arr = [];   //array USINg
+  var arr = [];   //array USING
   for(var i = 0; i < keys.length; i++){
     var k = keys[i];
     var user = usr[k].usr;
@@ -62,12 +62,33 @@ function gotData(data){//get data from firebase
   //return console.log(usr);
   //return usr;
   console.log(arr);
+
+  var sorted_a = sortByColumn(arr, 0);
+  console.log(sorted_a);
 }
 
 function errData(err){
   console.log("Error");
   console.log(err);
 }
+
+function sortByColumn(a, colIndex){
+
+  a.sort(sortFunction);
+
+  function sortFunction(a, b) {
+      if (a[colIndex] === b[colIndex]) {
+          return 0;
+      }
+      else {
+          return (a[colIndex] < b[colIndex]) ? -1 : 1;
+      }
+  }
+
+  return a;
+}
+
+
 
 
 function login(){
@@ -83,6 +104,8 @@ function login(){
   });
 
 }
+
+
 
 
 function logout(){
