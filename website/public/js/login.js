@@ -1,3 +1,4 @@
+var uid;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -6,17 +7,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user.uid);
-        var uid = user.uid; //variable uid, has uid to get data base related file UID
+       uid = user.uid; //variable uid, has uid to get data base related file UID
         console.log(uid);
         var database = firebase.database();
         var ref = database.ref('users');
         ref.on('value', gotData, errData);
-        //console.log(arr);
         var data = { //set data to push, get from usr choice
           usr: uid, 
-          resp: "Babies"//actual response go here
+          resp: "social"//actual response go here
         }
-        console.log(ref.push(data)); 
+          ref.push(data)//); 
         //console.log(data.val);
        // var ref = database.ref('users');
         //ref.on('value', gotData, errData);
@@ -25,7 +25,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     var user = firebase.auth().currentUser;
     var id = firebase.auth().id;
     if(user != null){
-
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
     }
@@ -34,24 +33,26 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
-
   }
 });
 
 function gotData(data){//get data from firebase
-  console.log(data.val());
   var usr = data.val();
-  console.log(usr);
   var keys = Object.keys(usr);
-  console.log(keys);
+  var arr = [];   //array USING
   for(var i = 0; i < keys.length; i++){
     var k = keys[i];
     var user = usr[k].usr;
     var resp = usr[k].resp;
-    console.log(user, resp);
+    arr[i] = [];
+    arr[i][1] = user;
+    arr[i][0] = resp;
+    //console.log(user, resp);
   }
-  //return console.log(usr);
-  //return usr;
+  console.log(arr);
+
+  var sorted_a = sortByColumn(arr, 0);
+  console.log(sorted_a);//Sorted Array
 }
 
 function errData(err){
@@ -59,6 +60,21 @@ function errData(err){
   console.log(err);
 }
 
+function sortByColumn(a, colIndex){
+
+  a.sort(sortFunction);
+
+  function sortFunction(a, b) {
+      if (a[colIndex] === b[colIndex]) {
+          return 0;
+      }
+      else {
+          return (a[colIndex] < b[colIndex]) ? -1 : 1;
+      }
+  }
+
+  return a;
+}
 
 function login(){
 
@@ -73,10 +89,6 @@ function login(){
   });
 
 }
-
-/*function getUsrId(){
-  firebase.auth().
-}*/
 
 function logout(){
   firebase.auth().signOut();
