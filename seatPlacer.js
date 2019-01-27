@@ -32,6 +32,7 @@ function formLists() {
             case "sleep":
                 wantsToSleepList.push(users[i])
                 break
+            case "read":
                 wantsToReadList.push(users[i])
                 break
             case "old":
