@@ -14,7 +14,7 @@
 // }
 
 
-function () {
+function doStuff() {
     let users = []; //get users from database
     let nextSeatNumber = 0;
     let seats = [];//array to fill with users that have been assigned to seats
@@ -22,6 +22,11 @@ function () {
     //place all ada users
     //place all sleeping users
     //place all reading users
+    //place all baby people
     //place all talkers
+
+    for (user in dataArray){
+
+    }
 
 }
