@@ -15,13 +15,14 @@ function valid_options(ba, sl, ac) {
         baby = ba;
         social = sl;
         acces = ac;
-        
+        /*
         if(baby != 'i')
             pushData(baby);
         else if(social != 'i')
             pushData(social);
         else if(acces != 'i')
             pushData(acces);
+            */
         window.location = "seat_chooser.html";
     }
         
