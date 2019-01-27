@@ -64,15 +64,15 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #4aca85; }
+  background: #c33019; }
 
 ::-moz-selection {
   color: #fff;
-  background: #4aca85; }
+  background: #c33019; }
 
 ::selection {
   color: #fff;
-  background: #4aca85; }
+  background: #c33019; }
 
 .product-img,
 .work-img,
