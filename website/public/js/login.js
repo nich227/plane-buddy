@@ -79,3 +79,7 @@ function login(){
 function logout(){
   firebase.auth().signOut();
 }
+
+function continueToMatching() {
+  window.location = "matching.html";
+}
