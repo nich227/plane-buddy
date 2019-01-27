@@ -18,4 +18,10 @@ $('.dot').mouseenter(function(){
    $(this).css({background:'#66CDAA'});
   
     });
-  
+  function buildPlaneSeats(array){
+      for(var row=0; row<29; row++){
+          for(var seat=0; seat<5;seat++){
+              print(array[row][seat])
+          }
+      }
+  }
