@@ -1,4 +1,4 @@
-//var uid;
+var uid;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user.uid);
-       var uid = user.uid; //variable uid, has uid to get data base related file UID
+       uid = user.uid; //variable uid, has uid to get data base related file UID
         console.log(uid);
         var database = firebase.database();
         var ref = database.ref('users');

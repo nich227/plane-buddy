@@ -49,7 +49,8 @@
 
 	</head>
 	<body>
-    <script src="js/login.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/seat_chooser.js"></script>
     <script src="js/matching.js"></script>
 	<div class="colorlib-loader"></div>
 
@@ -91,19 +92,254 @@
 
         <div id="colorlib-contact">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 col-md-push-4 animate-box">
-                            <form action="#">
-                                <div class="row form-group">
-                                    <img src="images/newSchematic.PNG" alt="Seating Chart">
+                    <!-- <div class="row"> -->
+                        <div class="col-md-0 col-md-push-4 animate-box">
+                            <!-- <form action="#"> -->
+                                <div class="row form-group" id="print-area">
+									<!-- <img src="images/newSchematic.PNG" alt="Seating Chart"> -->
+									<link rel="stylesheet" href="css/seat_chooser.css">
+									<script src="js/seat_chooser.js"></script>
+									<!-- <script>
+											window.onload = function() {
+												var anchors = document.getElementsByClassName('row1');
+												for(var i = 0; i < anchors.length; i++) {
+													var anchor = anchors[i];
+													anchor.onclick = function() {
+														alert('Row 1');
+													}
+												}
+											}
+									</script> -->
+
+									<script>
+										// let array=[[]]
+										// firebase.database().ref().child("usr").on('value').then(function(snapshot) {
+										// 	snapshot.forEach(function(child) {
+										// 		var childData = child.val();
+										// 		var resp=child.val().resp;
+										// 		var userID=child.val().usr;
+										// 		array.push([resp,userID]);
+										// 	});
+										// });
+										let array = [['access',1],['access',1],['access',1],['access',1],['baby',3],['baby',3],['baby',3],['baby',3],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4],['read',4], ['sleep',2],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['sleep',4],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['social',8],['done',1]];//get data from Patrick's db
+										buildPlaneSeats(array);
+									</script>
+
+									<script>
+											window.onload = function() {
+												var anchors = document.getElementsByClassName('row1');
+												for(var i = 0; i < anchors.length; i++) {
+													var anchor = anchors[i];
+													anchor.onclick = function() {
+														alert('Row 1');
+													}
+												}
+
+												// var anchors = document.getElementsByClassName('seatA');
+												// for(var i = 0; i < anchors.length; i++) {
+												// 	var anchor = anchors[i];
+												// 	anchor.onclick = function() {
+												// 		alert('Seat A');
+												// 	}
+												// }
+											}
+									</script>
+									<div class="wrapper">
+										<ul class="seatA">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+										<ul class="seatB">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+										<ul class="seatC">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+										<ul class="seatD">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+										<ul class="seatE">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+										<ul class="seatF">
+											<li class="dot" class="row1"></li>
+											<li class="dot" class="row2"></li>
+											<li class="dot" class="row3"></li>
+											<li class="dot" class="row4"></li>
+											<li class="dot" class="row5"></li>
+											<li class="dot" class="row6"></li>
+											<li class="dot" class="row7"></li>
+											<li class="dot" class="row8"></li>
+											<li class="dot" class="row9"></li>
+											<li class="dot" class="row10"></li>
+											<li class="dot" class="row11"></li>
+											<li class="dot" class="row12"></li>
+											<li class="dot" class="row13"></li>
+											<li class="dot" class="row14"></li>
+											<li class="dot" class="row15"></li>
+											<li class="dot" class="row16"></li>
+											<li class="dot" class="row17"></li>
+											<li class="dot" class="row18"></li>
+											<li class="dot" class="row19"></li>
+											<li class="dot" class="row20"></li>
+											<li class="dot" class="row21"></li>
+											<li class="dot" class="row22"></li>
+											<li class="dot" class="row23"></li>
+											<li class="dot" class="row24"></li>
+											<li class="dot" class="row25"></li>
+											<li class="dot" class="row26"></li>
+											<li class="dot" class="row27"></li>
+											<li class="dot" class="row28"></li>
+											<li class="dot" class="row29"></li>
+										</ul>
+
+										<!-- <p style="margin-top:20px;"></p> -->
+									</div>
+																			
                                         
                                 </div>
-                                <div class="form-group" id="submit-area">
-                                    <input type="submit" value="Submit" onclick="valid_options(baby.value, social.value, acces.value)" class="btn btn-primary">
-                                </div>
-                            </form>		
+                            <!-- </form>		 -->
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
 

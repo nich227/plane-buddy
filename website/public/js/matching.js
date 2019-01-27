@@ -22,6 +22,7 @@ function valid_options(ba, sl, ac) {
         //else if(acces != 'i')
             //pushData(acces);
         window.location = "seat_chooser.html";
+        console.log("here");
     }
         
 }
