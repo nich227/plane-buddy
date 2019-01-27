@@ -15,16 +15,13 @@ function valid_options(ba, sl, ac) {
         baby = ba;
         social = sl;
         acces = ac;
-        console.log("HERE BIT" + uid);
-        if(baby != 'i')
-            pushData(baby);
-        else if(social != 'i')
-            pushData(social);
-        else if(acces != 'i')
-            pushData(acces);
-            console.log("here"); 
+        //if(baby != 'i')
+           // pushData(baby);
+        //else if(social != 'i')
+            //pushData(social);
+        //else if(acces != 'i')
+            //pushData(acces);
         window.location = "seat_chooser.html";
-        console.log("here");
     }
         
 }
