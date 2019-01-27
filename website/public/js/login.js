@@ -1,3 +1,4 @@
+var uid;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -14,9 +15,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         //console.log(arr);
         var data = { //set data to push, get from usr choice
           usr: uid, 
-          resp: "Babies"//actual response go here
+          resp: "test"//actual response go here
         }
-        console.log(ref.push(data)); 
+        //console.log(
+          ref.push(data)//); 
         //console.log(data.val);
        // var ref = database.ref('users');
         //ref.on('value', gotData, errData);
@@ -39,19 +41,27 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function gotData(data){//get data from firebase
-  console.log(data.val());
+  //console.log(data.val());
   var usr = data.val();
-  console.log(usr);
+  //console.log(usr);
   var keys = Object.keys(usr);
-  console.log(keys);
+  
+  
+  //console.log(keys);
+  var arr = [];   //array USINg
   for(var i = 0; i < keys.length; i++){
     var k = keys[i];
     var user = usr[k].usr;
     var resp = usr[k].resp;
-    console.log(user, resp);
+    arr[i] = [];
+    arr[i][1] = user;
+    arr[i][0] = resp;
+    
+    //console.log(user, resp);
   }
   //return console.log(usr);
   //return usr;
+  console.log(arr);
 }
 
 function errData(err){
@@ -74,9 +84,6 @@ function login(){
 
 }
 
-/*function getUsrId(){
-  firebase.auth().
-}*/
 
 function logout(){
   firebase.auth().signOut();
