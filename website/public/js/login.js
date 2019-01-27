@@ -12,12 +12,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         var database = firebase.database();
         var ref = database.ref('users');
         ref.on('value', gotData, errData);
-        //console.log(arr);
         var data = { //set data to push, get from usr choice
           usr: uid, 
-          resp: "test"//actual response go here
+          resp: "social"//actual response go here
         }
-        //console.log(
           ref.push(data)//); 
         //console.log(data.val);
        // var ref = database.ref('users');
@@ -27,7 +25,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     var user = firebase.auth().currentUser;
     var id = firebase.auth().id;
     if(user != null){
-
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
     }
@@ -36,18 +33,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
-
   }
 });
 
 function gotData(data){//get data from firebase
-  //console.log(data.val());
   var usr = data.val();
-  //console.log(usr);
   var keys = Object.keys(usr);
-  
-  
-  //console.log(keys);
   var arr = [];   //array USING
   for(var i = 0; i < keys.length; i++){
     var k = keys[i];
@@ -56,15 +47,12 @@ function gotData(data){//get data from firebase
     arr[i] = [];
     arr[i][1] = user;
     arr[i][0] = resp;
-    
     //console.log(user, resp);
   }
-  //return console.log(usr);
-  //return usr;
   console.log(arr);
 
   var sorted_a = sortByColumn(arr, 0);
-  console.log(sorted_a);
+  console.log(sorted_a);//Sorted Array
 }
 
 function errData(err){
@@ -88,9 +76,6 @@ function sortByColumn(a, colIndex){
   return a;
 }
 
-
-
-
 function login(){
 
   var userEmail = document.getElementById("email_field").value;
@@ -104,9 +89,6 @@ function login(){
   });
 
 }
-
-
-
 
 function logout(){
   firebase.auth().signOut();
