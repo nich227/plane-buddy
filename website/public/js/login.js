@@ -40,6 +40,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 function gotData(data){//get data from firebase
   console.log(data.val());
   var usr = data.val();
+  console.log(usr);
   var keys = Object.keys(usr);
   console.log(keys);
   for(var i = 0; i < keys.length; i++){
@@ -48,6 +49,7 @@ function gotData(data){//get data from firebase
     var resp = usr[k].resp;
     console.log(user, resp);
   }
+  console.log(usr[0].resp);
 }
 
 function errData(err){
