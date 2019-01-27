@@ -13,20 +13,54 @@
 
 // }
 
+let seats = [];//array to fill with users that have been assigned to seats
 
-function doStuff() {
-    let users = []; //get users from database
-    let nextSeatNumber = 0;
-    let seats = [];//array to fill with users that have been assigned to seats
-    let done = false;
-    //place all ada users
-    //place all sleeping users
-    //place all reading users
-    //place all baby people
-    //place all talkers
+function formLists() {
+    let users = getUsers(); //get users from database
+    // let done = false;
+    let babiesList = [];
+    let wantsToSleepList = [];
+    let wantsToReadList = [];
+    let isOldList = [];
+    let talkersList = [];
 
-    for (user in dataArray){
-
+    for (var i=0; i<users.length; i++){
+        switch (users[i].resp) {
+            case "babies":
+                babiesList.push(users[i])
+                break
+            case "sleep":
+                wantsToSleepList.push(users[i])
+                break
+                wantsToReadList.push(users[i])
+                break
+            case "old":
+                isOldList.push(users[i])
+                break
+            default:
+                talkersList.push(users[i])
+        }
     }
+}
+
+function fillSeats() {
+    let nextSeatNumber = 0;
+
+    //non-talkers
+    for (var i=nextSeatNumber; i<isOldList.length; i++){
+        seats[nextSeatNumber++]=isOldList[i];
+    }
+    for (var i=nextSeatNumber; i<babiesList.length; i++){
+        seats[nextSeatNumber++]=babiesList[i];
+    }
+    for (var i=nextSeatNumber; i<wantsToReadList.length; i++){
+        seats[nextSeatNumber++]=wantsToReadList[i];
+    }
+    for (var i=nextSeatNumber; i<wantsToSleepList.length; i++){
+        seats[nextSeatNumber++]=wantsToSleepList[i];
+    }
+
+    //talkers
+
 
 }
