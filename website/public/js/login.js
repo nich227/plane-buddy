@@ -11,9 +11,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         var database = firebase.database();
         var ref = database.ref('users');
         ref.on('value', gotData, errData);
+        //console.log(arr);
         var data = { //set data to push, get from usr choice
           usr: uid, 
-          resp: "Babies"
+          resp: "Babies"//actual response go here
         }
         console.log(ref.push(data)); 
         //console.log(data.val);
@@ -28,7 +29,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
     }
-
+ 
   } else {
     // No user is signed in.
     document.getElementById("user_div").style.display = "none";
@@ -49,7 +50,8 @@ function gotData(data){//get data from firebase
     var resp = usr[k].resp;
     console.log(user, resp);
   }
-  console.log(usr[0].resp);
+  //return console.log(usr);
+  //return usr;
 }
 
 function errData(err){
