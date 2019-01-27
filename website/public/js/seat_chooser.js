@@ -21,7 +21,11 @@ $('.dot').mouseenter(function(){
   function buildPlaneSeats(array){
       for(var row=0; row<29; row++){
           for(var seat=0; seat<5;seat++){
-              print(array[row][seat])
+            var newNode = document.createElement("P");
+            var textNode = document.createTextNode(array[row][seat]);
+            newNode.appendChild(textNode);
+        document.getElementById("print-area").appendChild(newNode);
+        console.log("Here");
           }
       }
   }

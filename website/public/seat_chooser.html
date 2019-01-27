@@ -95,7 +95,7 @@
                     <!-- <div class="row"> -->
                         <div class="col-md-0 col-md-push-4 animate-box">
                             <!-- <form action="#"> -->
-                                <div class="row form-group">
+                                <div class="row form-group" id="print-area">
 									<!-- <img src="images/newSchematic.PNG" alt="Seating Chart"> -->
 									<link rel="stylesheet" href="css/seat_chooser.css">
 									<script src="js/seat_chooser.js"></script>
@@ -112,8 +112,8 @@
 									</script> -->
 
 									<script>
-										array = 0;//get data from Patrick's db
-										seatChooser.buildPlaneSeats()
+										let array = [[1,2],[3,4]];//get data from Patrick's db
+										buildPlaneSeats(array);
 									</script>
 
 									<script>
